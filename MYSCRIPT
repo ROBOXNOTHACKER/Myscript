@@ -1,0 +1,79 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("RoboxNotHacker FUCKERGPT V2.1", "GrapeTheme")
+local Tab = Window:NewTab("Player")
+ 
+local PlayerSection = Tab:NewSection("Player")
+ 
+PlayerSection:NewSlider("Speed", "Speed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+ 
+PlayerSection:NewSlider("Jumppower", "POWER", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+ 
+PlayerSection:NewLabel("Tp Tool Works On EVERY GAME!")
+ 
+PlayerSection:NewButton("TPTOOL", "BEST OF THE BEST TOOLS IN THE WORLD", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+ 
+local Tab = Window:NewTab("Scripts")
+local ScriptSection = Tab:NewSection("Script")
+ 
+ScriptSection:NewButton("Infinity Yield Script", "The Best Script In The World", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ 
+ScriptSection:NewButton("Orca", "IDK", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+ 
+end)
+ 
+ScriptSection:NewButton("Dex Script", "Normal Dex", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+ 
+ 
+ScriptSection:NewLabel("More Soon")
+ScriptSection:NewLabel("Subscribe To RoboxNotHacker")
+ScriptSection:NewLabel("FOR MORE")
+ 
+ 
+local Tab = Window:NewTab("Credits")
+local CreditsSection = Tab:NewSection("Credits")
+ 
+CreditsSection:NewLabel("This Hub Made By: RoboxNotHacker!")
+CreditsSection:NewLabel("We have yt RoboxNotHacker!!!!")
+ 
+ 
+local Tab = Window:NewTab("Settings")
+local SettingsSection = Tab:NewSection("Settings")
+ 
+SettingsSection:NewKeybind("Infinity Yield Script", "KeybindInfo", Enum.KeyCode.P, function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ 
+SettingsSection:NewKeybind("Dex Script", "KeybindInfo", Enum.KeyCode.G, function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+ 
+SettingsSection:NewKeybind("Orca Script", "KeybindInfo", Enum.KeyCode.U, function()
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+end)
+ 
+SettingsSection:NewLabel("IceHub Script")
+ 
+SettingsSection:NewKeybind("IceHub Script", "KeybindInfo", Enum.KeyCode.I, function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+end)
+ 
